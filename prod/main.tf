@@ -71,4 +71,5 @@ module "cdn" {
   cdn_profile_name    = var.cdn_profile_name
   cdn_sku_name        = var.cdn_sku_name
   cdn_endpoint_name   = var.cdn_endpoint_name
+  primary_blob_host    = module.storage.primary_blob_host
 }
