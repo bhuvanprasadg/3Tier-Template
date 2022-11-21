@@ -1,12 +1,12 @@
 module "resource-group" {
-  source              = "./modules/resource-group"
+  source              = "../modules/resource-group"
   resource_group_name = var.resource_group_name
   location            = var.location
   environment         = var.environment
 }
 
 module "networking" {
-  source                    = "./modules/networking"
+  source                    = "../modules/networking"
   resource_group_name       = var.resource_group_name
   location                  = var.location
   environment               = var.environment
@@ -30,7 +30,7 @@ module "networking" {
 }
 
 module "database" {
-  source                              = "./modules/database"
+  source                              = "../modules/database"
   resource_group_name                 = var.resource_group_name
   location                            = var.location
   environment                         = var.environment
@@ -48,7 +48,7 @@ module "database" {
 }
 
 module "storage" {
-  source                   = "./modules/storage"
+  source                   = "../modules/storage"
   resource_group_name      = var.resource_group_name
   location                 = var.location
   environment              = var.environment
@@ -64,7 +64,7 @@ module "storage" {
 }
 
 module "cdn" {
-  source              = "./modules/cdn"
+  source              = "../modules/cdn"
   resource_group_name = var.resource_group_name
   location            = var.location
   environment         = var.environment
