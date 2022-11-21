@@ -73,3 +73,60 @@ module "cdn" {
   cdn_endpoint_name   = var.cdn_endpoint_name
   primary_blob_host    = module.storage.primary_blob_host
 }
+
+module "azuread" {
+  source              = "../modules/azuread"
+  resource_group_name = var.resource_group_name
+  location            = var.location
+  environment         = var.environment
+  name                = var.adapp_name
+  display_name        = var.ad_username
+  password            = var.ad_userpswd
+}
+
+module "azure-monitor" {
+  source              = "../modules/azure-monitor"
+  resource_group_name = var.resource_group_name
+  location            = var.location
+  environment         = var.environment
+  name                = var.az_monitor_name
+  billing_cycle  = var.billing_cycle
+  effective_date = var.effective_date
+  plan_id        = var.plan_id
+  usage_type     = var.usage_type 
+  email        = var.user_email
+  first_name   = var.first_name_monitor
+  last_name    = var.last_name_monitor
+  phone_number = var.phone_number
+}
+
+module "key-vault" {
+  source              = "../modules/key-vault"
+  resource_group_name = var.resource_group_name
+  location            = var.location
+  environment         = var.environment
+  keyvault_name       = var.keyvault_name
+  keyvault_sku_name   = var.keyvault_sku_name
+}
+
+module "ddos" {
+  source              = "../modules/ddos"
+  resource_group_name = var.resource_group_name
+  location            = var.location
+  environment         = var.environment
+  name                = var.ddos_plan_name
+}
+
+module "app-insights" {
+  source              = "../modules/app-insights"
+  resource_group_name = var.resource_group_name
+  location            = var.location
+  environment         = var.environment
+  name                = var.analytics_workspace
+  sku                 = var.analytics_sku
+  retention_in_days   = var.retention_in_days
+  insight_name        = var.app_insights
+  application_type    = var.application_type
+}
+
+

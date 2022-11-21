@@ -1,0 +1,11 @@
+variable "resource_group_name" {}
+variable "location" {}
+variable "az_monitor_name" {}
+variable "billing_cycle" {}
+variable "effective_date" {}
+variable "plan_id" {}
+variable "usage_type" {}
+variable "user_email" {}
+variable "first_name_monitor" {}
+variable "last_name_monitor" {}
+variable "phone_number" {}
