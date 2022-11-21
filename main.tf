@@ -62,3 +62,13 @@ module "storage" {
   blob_source_location     = var.blob_source_location
   blob_access_tier         = var.blob_access_tier
 }
+
+module "cdn" {
+  source              = "./modules/cdn"
+  resource_group_name = var.resource_group_name
+  location            = var.location
+  environment         = var.environment
+  cdn_profile_name    = var.cdn_profile_name
+  cdn_sku_name        = var.cdn_sku_name
+  cdn_endpoint_name   = var.cdn_endpoint_name
+}

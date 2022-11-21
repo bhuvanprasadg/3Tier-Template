@@ -40,3 +40,6 @@ variable "blob_name" {}
 variable "blob_type" {}
 variable "blob_source_location" {}
 variable "blob_access_tier" {}
+variable "cdn_profile_name" {}
+variable "cdn_sku_name" {}
+variable "cdn_endpoint_name" {}
